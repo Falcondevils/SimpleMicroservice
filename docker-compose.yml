@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  userservices:
+    image: ${DOCKER_REGISTRY-}userservices
+    build:
+      context: .
+      dockerfile: UserServices/Dockerfile

@@ -11,6 +11,11 @@ namespace UserServices.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
+    //http://localhost:32768/api/user/1
+    //from docker compose
+    //http://localhost:4011/api/user/1
+    //from IIS express
     public class UserController : ControllerBase
     {
         DataBaseContext dbcontext;
@@ -26,8 +31,8 @@ namespace UserServices.Controllers
         {
             return dbcontext.Users.ToList();
         }
-
-        // GET: api/User/5
+        
+        // GET: api/User/1
         [HttpGet("{id}", Name = "Get")]
         public User Get(int id)
         {
