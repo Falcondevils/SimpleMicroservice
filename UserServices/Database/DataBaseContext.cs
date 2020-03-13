@@ -15,9 +15,10 @@ namespace UserServices.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Data Source=localhost;Initial Catalog=Sample;Integrated Security=True;");
-            //optionsBuilder.UseSqlServer(@"Data Source=SEA-FDSQLNP01\LANE07,10.50.6560;Database=Sample;User Id=data_exchange;Password=swapit;");
-            optionsBuilder.UseSqlServer(@"Data Source = 10.10.56.61; Initial Catalog = Sample; User ID = data_exchange; Password = swapit;MultipleActiveResultSets=True");
-            
+            //optionsBuilder.UseSqlServer(@"Data Source=SEA-FDSQLNP01\LANE07,1433;Database=Sample;User Id=data_exchange;Password=swapit;");
+           //optionsBuilder.UseSqlServer(@"Data Source=localhost,1433; Initial Catalog=Product;User Id=sa;Password=BigPassw0rd");
+            optionsBuilder.UseSqlServer(@"Data Source=10.13.32.149,1433; Initial Catalog=Product;User Id=sa;Password=BigPassw0rd");
+
         }
     }
 }

@@ -9,8 +9,8 @@ using UserServices.Database;
 namespace UserServices.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20200308203355_initial")]
-    partial class initial
+    [Migration("20200313014038_Initial2")]
+    partial class Initial2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

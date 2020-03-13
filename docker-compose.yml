@@ -1,8 +1,35 @@
+
+#version: '3.4'
+
+#services:
+ # userservices:
+  #  image: ${DOCKER_REGISTRY-}userservices
+   # build:
+    #  context: .
+     # dockerfile: UserServices/Dockerfile
+
+
 version: '3.4'
 
-services:
-  userservices:
-    image: ${DOCKER_REGISTRY-}userservices
-    build:
-      context: .
-      dockerfile: UserServices/Dockerfile
+services:  
+  userservices:  
+    links:  
+      - sqlserverService  
+    image: ${DOCKER_REGISTRY-}userservices  
+    build:  
+      context: .  
+      dockerfile: UserServices/Dockerfile  
+  
+  sqlserverService:  
+    image: microsoft/mssql-server-linux:2017-latest  
+    hostname: 'sqlserver'  
+    environment:  
+      ACCEPT_EULA: Y
+      SA_PASSWORD: "BigPassw0rd"  
+    volumes:  
+      - ./data/mssql:/var/opt/mssql3 
+    ports:  
+      - '14337:1433'  
+    expose:  
+      - 14337
+

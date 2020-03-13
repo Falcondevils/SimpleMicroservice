@@ -12,7 +12,7 @@ namespace UserServices.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    //http://localhost:32768/api/user/1
+    //http://localhost:32770/api/User
     //from docker compose
     //http://localhost:4011/api/user/1
     //from IIS express
